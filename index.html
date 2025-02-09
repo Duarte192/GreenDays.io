@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Day - História e Discografia</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #0d0d0d;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        button:hover::after {
+            transform: scale(1);
+        }
+        button:hover {
+            background-color: #3e8e41;
+            transform: scale(1.1);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: #222;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        img {
+            width: 250px;
+            margin-top: 40px;
+        }
+        .integrantes img {
+            width: 150px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            let selectedSection = document.getElementById(id);
+            selectedSection.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Green Day</h1>
+        <p>Bem-vindo ao site dedicado a uma das maiores bandas de punk rock da história!</p>
+        
+        <button onclick="showSection('origem')">Origem</button>
+        <button onclick="showSection('integrantes')">Integrantes</button>
+        <button onclick="showSection('historia')">História</button>
+        <button onclick="showSection('discografia')">Discografia</button>
+        
+        <div id="origem" class="section">
+            <h2>Origem</h2>
+            <p>Green Day foi formado em 1987 na Califórnia, EUA, por Billie Joe Armstrong e Mike Dirnt, 
+                inicialmente sob o nome Sweet Children. A banda surgiu no cenário underground punk da Bay 
+                Area e logo chamou a atenção de gravadoras independentes. Com a entrada do baterista Tré Cool 
+                em 1990, a formação clássica da banda estava completa.</p>
+            <center><img src="GreenDays.jpg" alt="error"></center>
+        </div>
+        
+        <div id="integrantes" class="section integrantes">
+            <h2>Integrantes</h2>
+            <p>O Green Day é composto por três membros principais:</p>
+            <ul>
+                <li><img src="billie-joe.jpg" alt="Billie Joe Armstrong"><b>Billie Joe Armstrong</b> - Vocalista e guitarrista, compositor principal da banda.</li>
+                <li><img src="mike-dirnt.jpg" alt="Mike Dirnt"><b>Mike Dirnt</b> - Baixista e vocalista de apoio, cofundador da banda.</li>
+                <li><img src="tree-cool.jpg" alt="Tré Cool"><b>Tré Cool</b> - Baterista, entrou na banda em 1990 e ajudou a definir o som do Green Day.</li>
+            </ul>
+        </div>
+        
+        <div id="historia" class="section">
+            <h2>História</h2>
+            <p>O sucesso do Green Day veio com o álbum <i>Dookie</i> (1994), que vendeu milhões de cópias e se tornou um dos álbuns mais icônicos do punk rock. Nos anos seguintes, a banda lançou álbuns de sucesso como <i>Insomniac</i>, <i>Nimrod</i> e <i>Warning</i>. Em 2004, a banda atingiu um novo patamar com <i>American Idiot</i>, um álbum conceitual que criticava a sociedade e o governo americano da época. Desde então, o Green Day continuou lançando músicas e se reinventando sem perder sua essência punk.</p>
+        </div>
+        
+        <div id="discografia" class="section">
+            <h2>Discografia</h2>
+            <p>A banda lançou diversos álbuns ao longo dos anos. Alguns dos mais marcantes incluem:</p>
+            <ul>
+                <li><b>Dookie (1994)</b> - Álbum que levou o Green Day ao estrelato com hits como "Basket Case" e "When I Come Around".</li>
+                <li><b>Insomniac (1995)</b> - Um disco mais pesado e sombrio, destacando "Brain Stew" e "Geek Stink Breath".</li>
+                <li><b>Nimrod (1997)</b> - Mistura de punk e baladas, incluindo "Good Riddance (Time of Your Life)".</li>
+                <li><b>Warning (2000)</b> - Uma sonoridade mais folk e experimental, trazendo "Minority" e "Warning".</li>
+                <li><b>American Idiot (2004)</b> - Um dos álbuns mais influentes do século XXI, incluindo "Boulevard of Broken Dreams" e "Holiday".</li>
+                <li><b>21st Century Breakdown (2009)</b> - Seguiu a linha política e social do álbum anterior, expandindo ainda mais o som da banda.</li>
+            </ul>
+        </div>
+        
+        <!-- Ajuste do iframe -->
+        <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4nBpII?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <h1>Spotify - Green Days</h1>
+        <img src="QRCode_Fácil.png" alt="error">
+    </div>
+</body>
+</html>
